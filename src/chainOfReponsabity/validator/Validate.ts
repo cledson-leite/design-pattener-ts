@@ -34,4 +34,8 @@ export class Validate {
         this.check = false
         throw new Error('Password invalido')
     }
+
+    valided(): boolean {
+        return this.check
+    }
 }
