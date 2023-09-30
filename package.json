@@ -2,8 +2,9 @@
   "name": "design-patterns-ts",
   "version": "1.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts"
+    "dev": "ts-node-esm --experimental-specifier-resolution=node  --transpile-only ./src/index"
   },
   "devDependencies": {
     "@types/node": "^20.8.0",
