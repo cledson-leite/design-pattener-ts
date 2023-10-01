@@ -1,5 +1,8 @@
 // import { Singleton } from "./criacional/singleton/Singleton";
 
+import { DiscountMin } from "./comportamental/strategy/DiscountMin";
+import { Product } from "./comportamental/strategy/ecommerce/Product";
+import { ShoppingCart } from "./comportamental/strategy/ecommerce/ShoppingCart";
 import { EmailValidator } from "./estrutural/adapter/EmailValidator";
 import { IEmailValidator } from "./estrutural/adapter/IEmailValidator";
 
@@ -51,3 +54,17 @@ import { IEmailValidator } from "./estrutural/adapter/IEmailValidator";
 
 // console.log(emailValidator.isEmail('csbetsonline@gmail.com'))
 
+const shoppingCart = new ShoppingCart()
+const products: Product[] = [
+    {name: 'Peoduto 1', price: 50},
+    {name: 'Peoduto 2', price: 50},
+    {name: 'Peoduto 3', price: 50},
+    {name: 'Peoduto 4', price: 50},
+    {name: 'Peoduto 5', price: 50},
+    {name: 'Peoduto 6', price: 50},
+    {name: 'Peoduto 7', price: 50},
+]
+shoppingCart.addProduct(...products)
+shoppingCart.discountStrategy = new DiscountMin()
+console.log(shoppingCart.getSubTotal())
+console.log(shoppingCart.getTotal())
