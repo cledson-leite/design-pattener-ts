@@ -1,3 +1,10 @@
+// import { Singleton } from "./criacional/singleton/Singleton";
+
+// const instance1 = Singleton.instance
+// const instance2 = Singleton.instance
+
+// console.log(instance1 === instance2)
+
 // import { Validate } from "./chainOfReponsabity/validator/Validate";
 // try {
 //     console.log(Validate.validate('csbetsonline@gmail.com').string().email().valided())
