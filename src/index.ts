@@ -1,9 +1,21 @@
 // import { Singleton } from "./criacional/singleton/Singleton";
 
+import { PersonBuilder } from "./criacional/buider_1/PersonBuilder";
+
 // const instance1 = Singleton.instance
 // const instance2 = Singleton.instance
 
 // console.log(instance1 === instance2)
+
+const builder = new PersonBuilder()
+const personName = builder.firstName('cledson').builder()
+console.log(personName)
+const personLast = builder.lastName('leite').builder()
+console.log(personLast)
+const personGender = builder.gender('masc').builder()
+console.log(personGender)
+const personAge = builder.age(43).builder()
+console.log(personAge)
 
 // import { Validate } from "./chainOfReponsabity/validator/Validate";
 // try {
