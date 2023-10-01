@@ -1,5 +1,11 @@
 // import { Singleton } from "./criacional/singleton/Singleton";
 
+import { CeoBadgetHandle } from "./comportamental/chain_of_responsability/CeoBadgetHandle";
+import { CustomerBadget } from "./comportamental/chain_of_responsability/CustomerBadget";
+import { DirectorBadgetHandle } from "./comportamental/chain_of_responsability/DirectorBadgetHandle";
+import { HandleBadget } from "./comportamental/chain_of_responsability/HandleBadget";
+import { ManagerBadgetHandle } from "./comportamental/chain_of_responsability/ManagerBadgetHandle";
+import { SellerBadgetHandle } from "./comportamental/chain_of_responsability/SallerBadgetHandle";
 import { DiscountMin } from "./comportamental/strategy/DiscountMin";
 import { Product } from "./comportamental/strategy/ecommerce/Product";
 import { ShoppingCart } from "./comportamental/strategy/ecommerce/ShoppingCart";
@@ -54,17 +60,20 @@ import { IEmailValidator } from "./estrutural/adapter/IEmailValidator";
 
 // console.log(emailValidator.isEmail('csbetsonline@gmail.com'))
 
-const shoppingCart = new ShoppingCart()
-const products: Product[] = [
-    {name: 'Peoduto 1', price: 50},
-    {name: 'Peoduto 2', price: 50},
-    {name: 'Peoduto 3', price: 50},
-    {name: 'Peoduto 4', price: 50},
-    {name: 'Peoduto 5', price: 50},
-    {name: 'Peoduto 6', price: 50},
-    {name: 'Peoduto 7', price: 50},
-]
-shoppingCart.addProduct(...products)
-shoppingCart.discountStrategy = new DiscountMin()
-console.log(shoppingCart.getSubTotal())
-console.log(shoppingCart.getTotal())
+// const shoppingCart = new ShoppingCart()
+// const products: Product[] = [
+//     {name: 'Peoduto 1', price: 50},
+//     {name: 'Peoduto 2', price: 50},
+//     {name: 'Peoduto 3', price: 50},
+//     {name: 'Peoduto 4', price: 50},
+//     {name: 'Peoduto 5', price: 50},
+//     {name: 'Peoduto 6', price: 50},
+//     {name: 'Peoduto 7', price: 50},
+// ]
+// shoppingCart.addProduct(...products)
+// shoppingCart.discountStrategy = new DiscountMin()
+// console.log(shoppingCart.getSubTotal())
+// console.log(shoppingCart.getTotal())
+
+const badget = new CustomerBadget(50001)
+HandleBadget.handle(badget)
